@@ -177,9 +177,10 @@ class instagram_handler():
         return people_that_dont_followback
 
 
-ponder = instagram_handler(details.username, details.password)
-ponder.login()              # log in to my account
-ponder.unfollow_users()     # unfollow those who doesn't follow me back
-ponder.logout()             # log out from the browser
-time.sleep(10*load_time)
-ponder.bot.quit()           # closing the browser
+def start_operation(username, password):
+    ponder = instagram_handler(username, password)
+    ponder.login()              # log in to my account
+    ponder.unfollow_users()     # unfollow those who doesn't follow me back
+    ponder.logout()             # log out from the browser
+    time.sleep(5*load_time)
+    ponder.bot.quit()           # closing the browser
